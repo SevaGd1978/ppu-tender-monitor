@@ -1,17 +1,6 @@
----
 meta:
-  environment: python
-  toolchain:
-    name: pip
-    version: 3.11
-build:
-  requirementsPath: requirements.txt
-  useCache: true
+  environment: docker
+
 run:
-  scriptName: app.py
-  command: null
-  persistenceMount: /data
+  command: nginx -g 'daemon off;'
   containerPort: 80
-  russianTrustedCa: false
-  singleton: true
-  zeroDowntime: false
